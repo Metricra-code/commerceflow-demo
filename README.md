@@ -168,8 +168,11 @@ The catalogue is read through facades and adapters, while the intentionally smal
 3. Run the TypeScript check.
 4. Run ChromeHeadless unit tests once.
 5. Build the Angular production bundle.
+6. Deploy the prebuilt browser bundle to Azure Static Web Apps.
 
 There is no lint script in this intentionally small scaffold, so the pipeline does not call a nonexistent command.
+
+The Azure DevOps pipeline expects a secret pipeline variable named `deployment_token`. Its value comes from **Manage deployment token** on the Azure Static Web App overview page. `public/staticwebapp.config.json` supplies the SPA navigation fallback so routed URLs continue to work after a direct visit or refresh.
 
 ## Technology Stack
 
