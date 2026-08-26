@@ -1,12 +1,15 @@
 {
   "name": "commerceflow-demo",
   "version": "0.0.0",
+  "packageManager": "bun@1.4.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadless",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json"
   },
   "private": true,
   "dependencies": {

@@ -1,0 +1,69 @@
+{
+  "products": [
+    {
+      "code": "shoe001",
+      "name": "Urban Runner",
+      "description": "A lightweight daily runner with a sculpted foam profile, breathable technical mesh, and a stable heel platform for long city miles.",
+      "category": "Road Running",
+      "price": 138,
+      "currency": "USD",
+      "imageUrl": "/images/shoe001.svg",
+      "stockStatus": "IN_STOCK"
+    },
+    {
+      "code": "shoe002",
+      "name": "Mono Trainer",
+      "description": "A precise monochrome trainer built with layered suede, tonal mesh, and a low-profile rubber cupsole for everyday movement.",
+      "category": "Everyday",
+      "price": 116,
+      "currency": "USD",
+      "imageUrl": "/images/shoe002.svg",
+      "stockStatus": "LOW_STOCK"
+    },
+    {
+      "code": "shoe003",
+      "name": "Trail One",
+      "description": "Technical grip, reinforced toe protection, and a resilient midsole give this trail model confidence across loose and uneven ground.",
+      "category": "Trail",
+      "price": 164,
+      "currency": "USD",
+      "imageUrl": "/images/shoe003.svg",
+      "stockStatus": "IN_STOCK"
+    },
+    {
+      "code": "shoe004",
+      "name": "Studio Sneaker",
+      "description": "A pared-back studio shoe with a flexible sole, soft woven upper, and considered proportions for quiet all-day comfort.",
+      "category": "Lifestyle",
+      "price": 104,
+      "currency": "USD",
+      "imageUrl": "/images/shoe004.svg",
+      "stockStatus": "OUT_OF_STOCK"
+    },
+    {
+      "code": "shoe005",
+      "name": "Metro Runner",
+      "description": "Responsive cushioning and a structured knit upper make the Metro Runner a versatile choice from weekday commutes to weekend sessions.",
+      "category": "Road Running",
+      "price": 148,
+      "currency": "USD",
+      "imageUrl": "/images/shoe005.svg",
+      "stockStatus": "IN_STOCK"
+    },
+    {
+      "code": "shoe006",
+      "name": "Apex Trainer",
+      "description": "A stable performance trainer with a wider landing platform, supportive midfoot cage, and durable high-abrasion outsole.",
+      "category": "Training",
+      "price": 156,
+      "currency": "USD",
+      "imageUrl": "/images/shoe006.svg",
+      "stockStatus": "LOW_STOCK"
+    }
+  ],
+  "pagination": {
+    "currentPage": 0,
+    "pageSize": 6,
+    "totalResults": 6
+  }
+}

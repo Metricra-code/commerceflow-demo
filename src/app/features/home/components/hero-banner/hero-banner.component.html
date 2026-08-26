@@ -1,0 +1,17 @@
+<section class="hero">
+  <div class="hero__content">
+    <p class="eyebrow">{{ eyebrow() }}</p>
+    <h1>{{ headline() }}</h1>
+    <p class="hero__subtitle">{{ subtitle() }}</p>
+    <a class="button hero__cta" [routerLink]="ctaUrl()">
+      {{ ctaLabel() }}
+      <app-icon name="arrow-right" />
+    </a>
+  </div>
+
+  <div class="hero__visual" aria-hidden="true">
+    <div class="hero__annotation hero__annotation--top">Mock OCC / 01</div>
+    <img [src]="imageUrl()" alt="" />
+    <div class="hero__annotation hero__annotation--bottom">electronics-spa · Product</div>
+  </div>
+</section>

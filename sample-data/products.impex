@@ -1,0 +1,15 @@
+# Illustrative SAP Commerce data only. This file is not imported by the Angular application.
+
+INSERT_UPDATE Category;code[unique=true];name[lang=en]
+;running;Running
+;trail;Trail
+;lifestyle;Lifestyle
+;training;Training
+
+INSERT_UPDATE Product;code[unique=true];name[lang=en];description[lang=en];supercategories(code)
+;shoe001;Urban Runner;Lightweight daily running shoe;running
+;shoe002;Mono Trainer;Minimal monochrome everyday trainer;lifestyle
+;shoe003;Trail One;Technical trail shoe with reinforced grip;trail
+;shoe004;Studio Sneaker;Flexible low-profile studio shoe;lifestyle
+;shoe005;Metro Runner;Responsive city running shoe;running
+;shoe006;Apex Trainer;Stable performance training shoe;training

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" role="img" aria-labelledby="title description">
+  <title id="title">Apex Trainer product illustration</title>
+  <desc id="description">A navy performance trainer on a muted apricot catalogue background.</desc>
+  <rect width="900" height="720" fill="#d5b287"/>
+  <path d="M70 84h760M70 636h760M116 48v624M784 48v624" stroke="#1c252e" stroke-opacity=".17" fill="none"/>
+  <text x="70" y="60" fill="#1c252e" font-family="sans-serif" font-size="18" letter-spacing="5">CF / 06 — TRAIN</text>
+  <g transform="rotate(3 450 385)">
+    <path d="M150 405c76-14 121-50 180-130 26-35 61-43 96-19 48 33 76 96 130 121 51 23 124 21 169 49 27 17 39 43 29 75l-17 21H190c-43 0-68-23-60-61z" fill="#243c51" stroke="#1c252e" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M136 465c90 24 168 25 251 11 130-22 222-5 360-41l9 51c3 22-14 42-36 42H183c-32 0-54-18-52-45z" fill="#e8e4d9" stroke="#1c252e" stroke-width="5"/>
+    <path d="M296 318l165 20m-192 14l225 28m-258 8l298 35" fill="none" stroke="#d5b287" stroke-width="7" stroke-linecap="round"/>
+    <path d="M338 272c24 68 62 113 116 154" fill="none" stroke="#172a3c" stroke-width="22" stroke-linecap="round"/>
+    <path d="M216 498h494M251 498l-14 31m88-31l-12 31m92-31l-8 31m91-31l-5 31m92-31v31m87-31l8 31" stroke="#243c51" stroke-width="6"/>
+  </g>
+  <text x="684" y="672" fill="#1c252e" font-family="sans-serif" font-size="16" letter-spacing="3">APEX TRAINER</text>
+</svg>

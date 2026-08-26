@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" role="img" aria-labelledby="title description">
+  <title id="title">Trail One product illustration</title>
+  <desc id="description">An olive trail shoe on a mineral blue catalogue background.</desc>
+  <rect width="900" height="720" fill="#9bb0b3"/>
+  <path d="M70 84h760M70 636h760M116 48v624M784 48v624" stroke="#182426" stroke-opacity=".17" fill="none"/>
+  <text x="70" y="60" fill="#182426" font-family="sans-serif" font-size="18" letter-spacing="5">CF / 03 — TRAIL</text>
+  <g transform="rotate(-3 450 390)">
+    <path d="M147 404c72-12 116-48 174-131 25-36 63-44 99-19 50 36 81 101 134 125 49 23 126 19 173 50 24 16 32 43 22 73l-18 22H187c-43 0-68-23-59-61z" fill="#606d45" stroke="#182426" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M135 465c87 23 171 22 253 8 132-23 221-6 356-38l10 50c4 22-12 43-34 46l-536 5c-32 1-55-18-54-45z" fill="#d8d3bf" stroke="#182426" stroke-width="5"/>
+    <path d="M289 319l167 18m-193 14l231 28m-264 11l306 34" fill="none" stroke="#d8d3bf" stroke-width="7" stroke-linecap="round"/>
+    <path d="M337 272c20 69 58 116 114 158" fill="none" stroke="#344532" stroke-width="22" stroke-linecap="round"/>
+    <path d="M193 530l29 20 33-20 32 20 34-20 33 20 34-20 34 20 34-20 34 20 34-20 34 20 34-20 34 20 34-20" fill="none" stroke="#182426" stroke-width="6"/>
+  </g>
+  <text x="732" y="672" fill="#182426" font-family="sans-serif" font-size="16" letter-spacing="3">TRAIL ONE</text>
+</svg>

@@ -1,0 +1,98 @@
+<section class="cart container">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Lightweight RxJS state</p>
+      <h1>Your cart</h1>
+    </div>
+    @if (((cartCount$ | async) ?? 0) > 0) {
+      <button class="button button--quiet" type="button" (click)="clear()">Clear cart</button>
+    }
+  </div>
+
+  @if (cart$ | async; as entries) {
+    @if (entries.length === 0) {
+      <div class="cart-empty state-panel">
+        <app-icon name="package" />
+        <div>
+          <h2>Your cart is ready for a first product</h2>
+          <p>Browse the six-product mock catalogue and add an item to see reactive totals and quantity updates.</p>
+        </div>
+        <a class="button" routerLink="/products">
+          Explore products
+          <app-icon name="arrow-right" />
+        </a>
+      </div>
+    } @else {
+      <div class="cart__layout">
+        <div class="cart__entries">
+          @for (entry of entries; track entry.product.code) {
+            <article class="cart-entry">
+              <a class="cart-entry__image" [routerLink]="['/products', entry.product.code]">
+                <img [src]="entry.product.imageUrl" [alt]="entry.product.name" />
+              </a>
+
+              <div class="cart-entry__content">
+                <div class="cart-entry__heading">
+                  <div>
+                    <p>{{ entry.product.category }} · {{ entry.product.code }}</p>
+                    <h2><a [routerLink]="['/products', entry.product.code]">{{ entry.product.name }}</a></h2>
+                  </div>
+                  <strong>{{ entry.product.price * entry.quantity | currency: entry.product.currency:'symbol':'1.0-0' }}</strong>
+                </div>
+
+                <div class="cart-entry__actions">
+                  <div class="quantity-control" aria-label="Quantity controls">
+                    <button type="button" (click)="decrease(entry)" aria-label="Decrease quantity">
+                      <app-icon name="minus" />
+                    </button>
+                    <span aria-live="polite">{{ entry.quantity }}</span>
+                    <button type="button" (click)="increase(entry)" aria-label="Increase quantity">
+                      <app-icon name="plus" />
+                    </button>
+                  </div>
+
+                  <button class="remove-button" type="button" (click)="remove(entry.product.code)">
+                    <app-icon name="trash" />
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </article>
+          }
+        </div>
+
+        <aside class="cart-summary" aria-label="Cart summary">
+          <p class="eyebrow">Order summary</p>
+          <dl>
+            <div>
+              <dt>Items</dt>
+              <dd>{{ cartCount$ | async }}</dd>
+            </div>
+            <div>
+              <dt>Subtotal</dt>
+              <dd>{{ cartTotal$ | async | currency:'USD':'symbol':'1.0-0' }}</dd>
+            </div>
+            <div>
+              <dt>Delivery</dt>
+              <dd>Not calculated</dd>
+            </div>
+            <div class="cart-summary__total">
+              <dt>Total</dt>
+              <dd>{{ cartTotal$ | async | currency:'USD':'symbol':'1.0-0' }}</dd>
+            </div>
+          </dl>
+
+          <div class="cart-summary__note">
+            <strong>Demo scope</strong>
+            <p>Checkout and payment are intentionally excluded. Cart state lives in an RxJS service for clarity.</p>
+          </div>
+
+          <a class="button button--secondary" routerLink="/products">
+            Continue shopping
+            <app-icon name="arrow-right" />
+          </a>
+        </aside>
+      </div>
+    }
+  }
+</section>

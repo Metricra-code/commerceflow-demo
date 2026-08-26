@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" routerLink="/" aria-label="CommerceFlow Demo home">
+      <span class="brand__mark" aria-hidden="true">CF</span>
+      <span>CommerceFlow <span class="brand__demo">Demo</span></span>
+    </a>
+
+    <nav aria-label="Primary navigation">
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/products" routerLinkActive="is-active">Products</a>
+      <a class="cart-link" routerLink="/cart" routerLinkActive="is-active" aria-label="View shopping cart">
+        <app-icon name="shopping-bag" />
+        <span>Cart</span>
+        <span class="cart-count" aria-label="items in cart">{{ (cartCount$ | async) ?? 0 }}</span>
+      </a>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" role="img" aria-labelledby="title description">
+  <title id="title">Metro Runner product illustration</title>
+  <desc id="description">A deep rust running shoe on a pale lavender catalogue background.</desc>
+  <rect width="900" height="720" fill="#c9c3d1"/>
+  <path d="M70 84h760M70 636h760M116 48v624M784 48v624" stroke="#231d29" stroke-opacity=".16" fill="none"/>
+  <text x="70" y="60" fill="#231d29" font-family="sans-serif" font-size="18" letter-spacing="5">CF / 05 — METRO</text>
+  <g transform="rotate(-5 450 390)">
+    <path d="M150 405c81-17 121-52 180-128 27-35 60-42 94-19 44 31 77 92 129 116 52 24 123 23 171 50 29 16 40 42 31 75l-16 21H191c-43 0-68-23-61-61z" fill="#934b39" stroke="#231d29" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M136 463c91 27 169 27 248 14 131-22 223-6 365-43l7 51c3 22-14 42-36 42H184c-33 0-55-18-53-45z" fill="#ece8de" stroke="#231d29" stroke-width="5"/>
+    <path d="M297 315l163 19m-190 15l222 28m-255 8l292 35" fill="none" stroke="#ece8de" stroke-width="6" stroke-linecap="round"/>
+    <path d="M336 271c25 70 63 114 117 153" fill="none" stroke="#62362d" stroke-width="21" stroke-linecap="round"/>
+    <path d="M252 492c130 20 296 17 454-29" fill="none" stroke="#934b39" stroke-width="7"/>
+  </g>
+  <text x="684" y="672" fill="#231d29" font-family="sans-serif" font-size="16" letter-spacing="3">METRO RUNNER</text>
+</svg>

@@ -1,0 +1,69 @@
+<section class="catalogue container">
+  <div class="catalogue__intro">
+    <p class="eyebrow">Mock OCC · electronics-spa</p>
+    <h1>Product catalogue</h1>
+    <p>Six footwear models delivered through a replaceable OCC-style adapter.</p>
+  </div>
+
+  <div class="catalogue__toolbar">
+    <div class="search-field">
+      <label for="product-search">Search products</label>
+      <div class="search-field__control">
+        <app-icon name="search" />
+        <input
+          id="product-search"
+          type="search"
+          [formControl]="searchControl"
+          placeholder="Search by name, code, or category"
+          aria-controls="product-grid"
+          autocomplete="off"
+        />
+      </div>
+    </div>
+
+    <div class="catalogue__endpoint">
+      <span>REST source</span>
+      <code>/occ/v2/electronics-spa/products</code>
+    </div>
+  </div>
+
+  @if (products$ | async; as products) {
+    <div class="catalogue__status" aria-live="polite">
+      @if (!loading() && !error()) {
+        <span>{{ products.length }} {{ products.length === 1 ? 'product' : 'products' }}</span>
+      }
+      @if (searchControl.value) {
+        <span>Matching “{{ searchControl.value }}”</span>
+      }
+    </div>
+
+    @if (loading()) {
+      <div class="product-grid" aria-label="Loading products">
+        @for (item of [1, 2, 3, 4, 5, 6]; track item) {
+          <div class="product-skeleton skeleton"></div>
+        }
+      </div>
+    } @else if (error()) {
+      <div class="state-panel">
+        <div>
+          <h2>Products could not be loaded</h2>
+          <p>The mock OCC endpoint did not respond. Edit the search field to retry the request.</p>
+        </div>
+      </div>
+    } @else if (products.length === 0) {
+      <div class="state-panel">
+        <div>
+          <h2>No products match that search</h2>
+          <p>Try a model such as “Runner”, a category such as “Trail”, or clear the search.</p>
+        </div>
+        <button class="button button--secondary" type="button" (click)="clearSearch()">Clear search</button>
+      </div>
+    } @else {
+      <div class="product-grid" id="product-grid">
+        @for (product of products; track product.code; let index = $index) {
+          <app-product-card [product]="product" [sequence]="index + 1" />
+        }
+      </div>
+    }
+  }
+</section>

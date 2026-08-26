@@ -6,10 +6,9 @@
 /out-tsc
 /bazel-out
 
-# Node
+# Dependencies
 /node_modules
-npm-debug.log
-yarn-error.log
+bun-error.log
 
 # IDEs and editors
 .idea/
@@ -30,6 +29,7 @@ yarn-error.log
 
 # Miscellaneous
 /.angular/cache
+/.lazyweb
 .sass-cache/
 /connect.lock
 /coverage

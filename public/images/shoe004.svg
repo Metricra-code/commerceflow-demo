@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" role="img" aria-labelledby="title description">
+  <title id="title">Studio Sneaker product illustration</title>
+  <desc id="description">A clean white studio sneaker on a clay catalogue background.</desc>
+  <rect width="900" height="720" fill="#c89e83"/>
+  <path d="M70 84h760M70 636h760M116 48v624M784 48v624" stroke="#2c211c" stroke-opacity=".16" fill="none"/>
+  <text x="70" y="60" fill="#2c211c" font-family="sans-serif" font-size="18" letter-spacing="5">CF / 04 — STUDIO</text>
+  <g transform="rotate(6 450 385)">
+    <path d="M158 409c75-17 115-47 173-127 26-36 62-45 96-21 44 32 71 91 125 118 52 26 123 22 169 48 28 16 40 40 32 72l-16 21H194c-44 0-70-22-62-59z" fill="#eeeae2" stroke="#2c211c" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M139 466c87 24 169 25 248 12 132-22 224-6 359-41l8 50c3 22-14 42-36 42H184c-32 0-54-18-53-44z" fill="#f7f3e9" stroke="#2c211c" stroke-width="5"/>
+    <path d="M304 319l154 18m-183 15l215 27m-249 6l286 37" fill="none" stroke="#2c211c" stroke-width="5" stroke-linecap="round"/>
+    <path d="M342 274c20 65 58 108 108 151" fill="none" stroke="#b76f4e" stroke-width="18" stroke-linecap="round"/>
+    <path d="M209 501h507" stroke="#b76f4e" stroke-width="4"/>
+  </g>
+  <text x="673" y="672" fill="#2c211c" font-family="sans-serif" font-size="16" letter-spacing="3">STUDIO SNEAKER</text>
+</svg>

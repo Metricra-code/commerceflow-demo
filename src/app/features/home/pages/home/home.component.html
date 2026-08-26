@@ -1,0 +1,58 @@
+@if (page$ | async; as page) {
+  <div class="home-cms">
+    @for (slot of page.slots; track slot.position) {
+      <section [class.home-cms__promos]="slot.position === 'Section1'" [attr.aria-label]="slot.position">
+        @for (component of slot.components; track component.uid) {
+          <app-cms-component-renderer [component]="component" />
+        }
+      </section>
+    }
+  </div>
+} @else if (cmsError()) {
+  <section class="container home-error state-panel">
+    <div>
+      <h2>Homepage content is unavailable</h2>
+      <p>The mock CMS response could not be loaded. Product browsing is still available.</p>
+    </div>
+    <a class="button" routerLink="/products">Browse products</a>
+  </section>
+} @else {
+  <div class="home-hero-skeleton skeleton" aria-label="Loading homepage content"></div>
+}
+
+<section class="container featured">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Selected catalogue</p>
+      <h2>Featured products</h2>
+    </div>
+    <a class="featured__link" routerLink="/products">
+      View all six
+      <app-icon name="arrow-right" />
+    </a>
+  </div>
+
+  @if (featuredProducts$ | async; as products) {
+    @if (featuredError()) {
+      <div class="state-panel">
+        <div>
+          <h2>Featured products could not be loaded</h2>
+          <p>Open the product catalogue to try the mock OCC endpoint again.</p>
+        </div>
+        <a class="button" routerLink="/products">Open product catalogue</a>
+      </div>
+    } @else {
+      <div class="featured__grid">
+        @for (product of products; track product.code; let index = $index) {
+          <app-product-card [product]="product" [sequence]="index + 1" />
+        }
+      </div>
+    }
+  } @else {
+    <div class="featured__grid" aria-label="Loading featured products">
+      @for (item of [1, 2, 3]; track item) {
+        <div class="featured__skeleton skeleton"></div>
+      }
+    </div>
+  }
+</section>

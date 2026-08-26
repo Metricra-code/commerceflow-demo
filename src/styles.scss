@@ -1,1 +1,253 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --font-body: 'Albert Sans', 'Avenir Next', sans-serif;
+  --font-display: 'Familjen Grotesk', 'Arial Narrow', sans-serif;
+
+  --color-canvas: oklch(96.8% 0.008 105);
+  --color-surface: oklch(99% 0.005 105);
+  --color-surface-muted: oklch(93.8% 0.012 105);
+  --color-text: oklch(22% 0.015 105);
+  --color-text-muted: oklch(45% 0.014 105);
+  --color-border: oklch(82% 0.012 105);
+  --color-border-strong: oklch(48% 0.015 105);
+  --color-accent: oklch(84% 0.14 112);
+  --color-accent-strong: oklch(58% 0.13 112);
+  --color-accent-ink: oklch(25% 0.04 112);
+  --color-success: oklch(42% 0.09 145);
+  --color-warning: oklch(50% 0.11 75);
+  --color-danger: oklch(45% 0.14 25);
+  --color-focus: oklch(52% 0.18 255);
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-display: clamp(2.9rem, 7vw, 6.4rem);
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+
+  --radius-sm: 0.3rem;
+  --radius-md: 0.6rem;
+  --shadow-sm: 0 0.5rem 1.5rem oklch(22% 0.015 105 / 0.07);
+  --z-sticky: 200;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 20rem;
+  background: var(--color-canvas);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  background: var(--color-canvas);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: 0.98;
+}
+
+.container {
+  width: min(100% - 2rem, 78rem);
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-text);
+  color: var(--color-surface);
+  transform: translateY(-180%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 2.875rem;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  border: 1px solid var(--color-text);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 1.1rem;
+  background: var(--color-text);
+  color: var(--color-surface);
+  cursor: pointer;
+  font-weight: 650;
+  text-decoration: none;
+  transition: transform 160ms ease-out, background-color 160ms ease-out;
+}
+
+.button:hover:not(:disabled) {
+  background: oklch(29% 0.015 105);
+  transform: translateY(-1px);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.button:disabled {
+  border-color: var(--color-border);
+  background: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.button--secondary:hover:not(:disabled),
+.button--quiet:hover:not(:disabled) {
+  background: var(--color-surface-muted);
+}
+
+.button--quiet {
+  border-color: transparent;
+  background: transparent;
+  color: var(--color-text);
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  border-bottom: 1px solid var(--color-border-strong);
+  padding-bottom: var(--space-md);
+}
+
+.section-heading h1,
+.section-heading h2 {
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  letter-spacing: -0.055em;
+}
+
+.eyebrow {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.state-panel {
+  display: grid;
+  min-height: 20rem;
+  place-items: center;
+  gap: var(--space-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  padding: var(--space-2xl);
+  text-align: center;
+}
+
+.state-panel h2 {
+  font-size: var(--text-xl);
+  letter-spacing: -0.035em;
+}
+
+.state-panel p {
+  max-width: 42ch;
+  color: var(--color-text-muted);
+}
+
+.skeleton {
+  overflow: hidden;
+  background: var(--color-surface-muted);
+}
+
+.skeleton::after {
+  display: block;
+  width: 45%;
+  height: 100%;
+  background: oklch(99% 0.005 105 / 0.75);
+  content: '';
+  transform: translateX(-120%);
+  animation: loading-sweep 1.2s infinite ease-in-out;
+}
+
+@keyframes loading-sweep {
+  to { transform: translateX(240%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (min-width: 48rem) {
+  .container { width: min(100% - 3rem, 78rem); }
+}
+
+@media (pointer: coarse) {
+  .button { min-height: 3rem; }
+}

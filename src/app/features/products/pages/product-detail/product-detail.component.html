@@ -1,0 +1,88 @@
+<section class="product-detail container">
+  <a class="back-link" routerLink="/products">
+    <app-icon name="arrow-left" />
+    Back to products
+  </a>
+
+  @if (product$ | async; as product) {
+    <div class="product-detail__layout">
+      <div class="product-detail__visual">
+        <div class="product-detail__visual-meta" aria-hidden="true">
+          <span>{{ product.code }}</span>
+          <span>{{ product.category }}</span>
+        </div>
+        <img [src]="product.imageUrl" [alt]="product.name" />
+      </div>
+
+      <div class="product-detail__content">
+        <div class="product-detail__identity">
+          <p class="eyebrow">{{ product.category }} · {{ product.code }}</p>
+          <h1>{{ product.name }}</h1>
+          <p class="product-detail__price">
+            {{ product.price | currency: product.currency:'symbol':'1.0-0' }}
+          </p>
+        </div>
+
+        <p class="product-detail__description">{{ product.description }}</p>
+
+        <dl class="product-detail__specs">
+          <div>
+            <dt>Product code</dt>
+            <dd>{{ product.code }}</dd>
+          </div>
+          <div>
+            <dt>Availability</dt>
+            <dd class="stock" [class.stock--low]="product.stockStatus === 'LOW_STOCK'" [class.stock--out]="product.stockStatus === 'OUT_OF_STOCK'">
+              {{ stockLabels[product.stockStatus] }}
+            </dd>
+          </div>
+          <div>
+            <dt>BaseSite</dt>
+            <dd>electronics-spa</dd>
+          </div>
+        </dl>
+
+        <div class="purchase-panel">
+          <div class="quantity-field">
+            <label for="quantity">Quantity</label>
+            <div class="quantity-control">
+              <button type="button" (click)="adjustQuantity(-1)" aria-label="Decrease quantity" [disabled]="quantityControl.value <= 1">
+                <app-icon name="minus" />
+              </button>
+              <input id="quantity" type="number" min="1" max="99" [formControl]="quantityControl" (change)="normalizeQuantity()" />
+              <button type="button" (click)="adjustQuantity(1)" aria-label="Increase quantity">
+                <app-icon name="plus" />
+              </button>
+            </div>
+          </div>
+
+          <button class="button purchase-panel__button" type="button" (click)="addToCart(product)" [disabled]="product.stockStatus === 'OUT_OF_STOCK'">
+            <app-icon name="shopping-bag" />
+            {{ product.stockStatus === 'OUT_OF_STOCK' ? 'Currently unavailable' : 'Add to cart' }}
+          </button>
+
+          <p class="purchase-panel__feedback" aria-live="polite">
+            @if (added()) { Added to cart. The header count has been updated. }
+          </p>
+        </div>
+      </div>
+    </div>
+  } @else if (error()) {
+    <div class="state-panel">
+      <div>
+        <h2>Product not found</h2>
+        <p>The requested product code is not available in the mock OCC catalogue.</p>
+      </div>
+      <a class="button" routerLink="/products">Return to products</a>
+    </div>
+  } @else {
+    <div class="product-detail__layout" aria-label="Loading product details">
+      <div class="product-detail__visual skeleton"></div>
+      <div class="product-detail__content product-detail__loading">
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+      </div>
+    </div>
+  }
+</section>

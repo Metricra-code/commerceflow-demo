@@ -1,0 +1,30 @@
+<article class="product-card">
+  <a class="product-card__image" [routerLink]="['/products', product().code]">
+    <span class="product-card__sequence">{{ sequence().toString().padStart(2, '0') }}</span>
+    <img [src]="product().imageUrl" [alt]="product().name" loading="lazy" />
+  </a>
+
+  <div class="product-card__content">
+    <div class="product-card__meta">
+      <span>{{ product().category }}</span>
+      <span class="stock" [class.stock--low]="product().stockStatus === 'LOW_STOCK'" [class.stock--out]="product().stockStatus === 'OUT_OF_STOCK'">
+        {{ stockLabels[product().stockStatus] }}
+      </span>
+    </div>
+
+    <div class="product-card__title-row">
+      <h3><a [routerLink]="['/products', product().code]">{{ product().name }}</a></h3>
+      <p>{{ product().price | currency: product().currency:'symbol':'1.0-0' }}</p>
+    </div>
+
+    <div class="product-card__actions">
+      <a class="button button--secondary" [routerLink]="['/products', product().code]">
+        View details
+        <app-icon name="arrow-right" />
+      </a>
+      <button class="button" type="button" (click)="addToCart()" [disabled]="product().stockStatus === 'OUT_OF_STOCK'">
+        Add to cart
+      </button>
+    </div>
+  </div>
+</article>

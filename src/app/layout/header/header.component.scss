@@ -1,0 +1,118 @@
+.site-header {
+  position: sticky;
+  z-index: var(--z-sticky);
+  top: 0;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.site-header__inner {
+  display: flex;
+  min-height: 4.75rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  text-decoration: none;
+}
+
+.brand__mark {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  background: var(--color-text);
+  color: var(--color-surface);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+}
+
+.brand__demo {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+nav a {
+  position: relative;
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: var(--space-xs);
+  padding-inline: var(--space-md);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav a::after {
+  position: absolute;
+  right: var(--space-md);
+  bottom: 0.35rem;
+  left: var(--space-md);
+  height: 2px;
+  background: transparent;
+  content: '';
+}
+
+nav a:hover,
+nav a.is-active {
+  color: var(--color-text);
+}
+
+nav a.is-active::after {
+  background: var(--color-accent-strong);
+}
+
+.cart-count {
+  display: grid;
+  min-width: 1.4rem;
+  height: 1.4rem;
+  place-items: center;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 40rem) {
+  .site-header__inner {
+    min-height: 4.25rem;
+    gap: var(--space-sm);
+  }
+
+  .brand {
+    font-size: var(--text-base);
+  }
+
+  .brand__mark,
+  .brand__demo,
+  .cart-link > span:not(.cart-count) {
+    display: none;
+  }
+
+  nav a {
+    padding-inline: var(--space-sm);
+  }
+
+  nav a::after {
+    right: var(--space-sm);
+    left: var(--space-sm);
+  }
+}

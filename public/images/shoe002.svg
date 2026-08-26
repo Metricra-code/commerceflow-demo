@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 720" role="img" aria-labelledby="title description">
+  <title id="title">Mono Trainer product illustration</title>
+  <desc id="description">A charcoal monochrome trainer on a sand catalogue background.</desc>
+  <rect width="900" height="720" fill="#d9d1c4"/>
+  <path d="M70 84h760M70 636h760M116 48v624M784 48v624" stroke="#242421" stroke-opacity=".16" fill="none"/>
+  <text x="70" y="60" fill="#242421" font-family="sans-serif" font-size="18" letter-spacing="5">CF / 02 — DAILY</text>
+  <g transform="rotate(4 450 385)">
+    <path d="M154 407c82-14 123-49 177-128 24-35 60-45 96-21 50 33 75 96 130 121 52 23 127 21 170 48 26 17 37 42 28 73l-18 23H190c-42 0-68-24-59-62z" fill="#3b3b37" stroke="#181916" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M137 468c92 21 169 23 248 9 126-22 225-4 362-39l8 49c3 22-14 42-36 42H181c-32 0-53-19-50-46z" fill="#eeeae1" stroke="#181916" stroke-width="5"/>
+    <path d="M297 319l162 17m-188 16l220 24m-252 8l289 35" fill="none" stroke="#d9d1c4" stroke-width="6" stroke-linecap="round"/>
+    <path d="M339 274c20 65 62 110 111 151" fill="none" stroke="#77766e" stroke-width="20" stroke-linecap="round"/>
+    <path d="M218 493h495" stroke="#77766e" stroke-width="5" stroke-dasharray="18 13"/>
+  </g>
+  <text x="696" y="672" fill="#242421" font-family="sans-serif" font-size="16" letter-spacing="3">MONO TRAINER</text>
+</svg>
